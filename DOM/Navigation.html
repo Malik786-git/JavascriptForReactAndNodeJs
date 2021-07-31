@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+          <div class="main-div">
+              <div class="child_1" id="para1">
+                  1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, sunt.</p>
+              </div>
+              <div class="child_2" id="para2">
+                  2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, sunt.</p>
+              </div>
+              <div class="child_3">
+                  3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, sunt.</p>
+              </div>
+          </div>
+
+       <input type="text" name="gender">
+
+<script>
+    
+    // Note: all codes run in inspect of console 
+    
+    // complete html of current page
+    document.documentElement; 
+
+    // complete body
+    document.body
+
+    // complete head 
+    document.head;
+
+    // node 
+    document.body.childNodes;
+
+   // childer 
+   document.body.children;
+   document.body.children.length; // how many child
+
+   // check body child available or not
+    document.body.hasChildNodes();   
+  
+    //   HOW TO FIND CHILD IN DOM
+    document.body.firstElementChild;
+
+     // check parent of element
+     document.body.parentNode;
+     document.body.parentElement;
+
+    // siblings
+    document.head.nextSibling;
+    document.body.previousSibling;
+    document.head.nextElementSibling;
+    document.body.previousElementSibling;
+
+    
+    // selected element form id classes
+    document.getElementById('para1').innerHTML = "welcome";
+    // using reference
+     var x = document.getElementById('para2');
+     x.innerHTML = "welcome back";
+
+    document.getElementsByClassName('child_3');
+
+    document.getElementsByTagName('div');
+
+    // name attribute
+    document.getElementsByName('gender') 
+   
+    // query selector (select first matching element)
+    document.querySelector('#para1');
+    document.querySelector('.para1');
+    document.querySelector('div');
+    // use to check how many div
+    document.querySelectorAll('div');
+
+
+
+</script>
+
+</body>
+</html>

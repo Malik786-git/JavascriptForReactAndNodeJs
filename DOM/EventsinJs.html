@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body {
+         background-color: brown;
+         color: chartreuse;
+      }
+   </style>
+</head>
+
+<body>
+
+   <!-- Events  -->
+   <!-- first way -->
+   <button onclick="alert('hello world')">1 Way....</button>
+   <!-- second way -->
+
+   <button onclick="fun1();">2 Way....</button>
+   <!-- third way -->
+   <button id="btn3">3 Way....</button>
+   <!-- forth way -->
+   <button id="btn4">4 Way....</button>
+   <!-- Event Object -->
+   <button id="btn5">Event Object</button>
+   <!-- Mouse Event -->
+   <!-- // 1 -->
+
+   <button id="btn6" style="margin-top: 100px;" onmousedown="mouseDown()" onmouseup="mouseUp()">Mouse Event</button>
+   <!-- // 2 -->
+   <div id="box" style="width: 100px; height: 100px; background: chocolate; margin-top: 20px;">
+      Lorem ipsum dolor sit amet consectetur erspiciatis.
+   </div>
+   <!--Keyboard Events  -->
+   <div class="main">
+
+      <input type="text" class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()">
+      <p id="key"></p>
+   </div>
+ <!--Input Events  -->
+ <div class="main2">
+   <label for="">Enter Name</label>
+   <input type="text" id="ice">
+   <label for="">Chose any option</label>
+   <select name="iceCreams" id="iceCreams" onchange="selectElement()">
+       <option value="">A</option>
+       <option value="B">B</option>
+       <option value="C">C</option>
+       <option value="D">D</option>
+   </select>
+   <br>
+   <div id="result"></div>
+</div>
+
+   <script>
+      //////////// Events //////////////
+      function fun1() {
+         alert("world hello!")
+      }
+      //  third way
+      const thirWay = document.getElementById('btn3');
+      thirWay.onclick = function () {
+         alert("hello js");
+      }
+      //  fourth way
+      const fourWay = document.getElementById('btn4');
+      fourWay.addEventListener('click', () => alert("hello 4 world"));
+
+      //  Event Object
+      const eveObj = document.getElementById('btn5');
+      const checkEvent = () => {
+         console.log(event);
+         console.log(event.target);
+         console.log(event.type);
+      }
+      eveObj.addEventListener('click', checkEvent);
+
+      //Mouse Events
+      // 1
+      function mouseDown() {
+         document.getElementById('btn6').style.color = "yellow";
+      }
+      function mouseUp() {
+         document.getElementById('btn6').style.color = "red";
+      }
+      // 2
+      const mEnter = document.getElementById('box');
+
+      mEnter.addEventListener('mouseenter', () => {
+         mEnter.style.backgroundColor = 'red';
+         console.log("YesEnter!");
+      })
+
+      mEnter.addEventListener('mouseleave', () => {
+         mEnter.style.backgroundColor = 'black';
+         console.log("YesEnter!");
+      })
+
+      //Keyboard Events
+      const keyPress = () => {
+         document.getElementById('key').innerHTML = `your press ${event.key} and its code is ${event.code}`;
+      }
+
+      const keyDown = () => {
+         document.getElementById('key').innerHTML = `key is down`;
+      }
+
+      const keyUp = () => {
+         document.getElementById('key').innerHTML = `key is Up`;
+      }
+      // Input Events 
+      const selectElement = ()=>{
+         const inputChange = document.getElementById('ice').value;
+         const iceCreams= document.getElementById('iceCreams').value;
+         console.log(`${inputChange} and ${iceCreams}`)
+
+      }
+      // another way
+      const selectElement1 = document.getElementById('iceCreams');
+      selectElement1.addEventListener('change',()=>{
+      
+         const inputChange = document.getElementById('ice').value;
+         const iceCreams= document.getElementById('iceCreams').value;
+         console.log(`${inputChange} and ${iceCreams}`)
+         
+      });
+   </script>
+
+</body>
+
+</html>
