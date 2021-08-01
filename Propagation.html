@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            #parent{
+                height: 200px;
+                width: 200px;
+                background: brown;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #child{
+                height: 100px;
+                width: 100px;
+                background: blueviolet;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    </style>
+</head>
+<body>
+    
+    <div id="parent">
+        <div id="child"></div>
+    </div>
+
+
+</body>
+
+  <script>
+    //   1
+    //   Bubbing (if you click parent only alert parent, but if you click child so first alert child then parent automatically, because child inside the parent so parent click automatically)
+    //   document.getElementById('parent').addEventListener('click', ()=>{
+    //        alert('Parent call');  
+    //   });
+    //   document.getElementById('child').addEventListener('click', ()=>{
+    //        alert('child call');  
+    //   });
+    
+    
+    
+    //   2 (call one at time)
+    document.getElementById('parent').addEventListener('click', ()=>{
+           alert('Parent call');  
+      });
+      document.getElementById('child').addEventListener('click', ()=>{
+           alert('child call');  
+           event.stopPropagation();
+      });
+
+    //   3
+    document.getElementById('parent').addEventListener('click', ()=>{
+           alert('Parent call');  
+      }, true);
+      document.getElementById('child').addEventListener('click', ()=>{
+           alert('child call');  
+           event.stopPropagation();
+      }, true);
+
+    // 4
+    document.getElementById('parent').addEventListener('click', ()=>{
+           alert('Parent call');  
+      }, true);
+      document.getElementById('child').addEventListener('click', ()=>{
+           alert('child call');  
+           event.stopPropagation();
+      }, true);
+
+  </script>
+  
+
+</html>

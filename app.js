@@ -6,6 +6,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const { setInterval, clearInterval } = require("timers");
+const { inflate } = require("zlib");
 
 
 // var /////////////////////////
@@ -1008,21 +1009,243 @@ const { setInterval, clearInterval } = require("timers");
 
 
 
+// ES - 6 PART
+
+// Array DESTRUCTURING
+
+// const myData = ["malik", 18, "C++"]
+// let [name, age, subject] = myData;
+
+// console.log(age);
+
+
+
+
+
+// const myData = ["malik", 18, "C++"]
+// let [name, age, subject, uni="Dawood"] = myData;
+
+// console.log(uni);
+
+
+// Object Destructuring
+
+
+
+// let bioData = {
+//     name         : "malik" ,
+//     age          :  18 ,
+//     uni : "dawood" 
+// }
+
+// let {name, age, uni, sub="Cpp"} = bioData;
+// console.log(name);
+// console.log(sub);
+
+
+
+// Object Properties
+
+// we use now use Dynamic Properties
+
+// let myName = "name"
+
+
+// let bioData = {
+//     [myName]         : "malik" ,
+//     age          :  18 ,
+//     uni : "dawood" 
+// }
+
+// console.log(bioData);
+
+
+
+
+
+// let myName = "name"
+// let age = 18
+
+// let bioData = {
+//     myName:myName,  //automatically detect the value
+//     age:age
+// }
+
+// console.log(bioData);
+
+
+
+
+// let myName = "name"
+// let age = 18
+
+// let bioData = { myName, age }
+
+// console.log(bioData);
+
+
+
+// Spread Operator(...)
+
+
+// const colors = ['red', 'blue', 'orange', 'green'];
+// const myColors = colors;  // here copy referece
+
+
+
+// console.log(myColors);
+// console.log(myColors[0]);
+// myColors[0] = 'grey';  
+// console.log(myColors[0]);
+// console.log(colors[0]); 
+
+
+
+// old way
+// const colors = ['red', 'blue', 'orange', 'green'];
+// const myColors = ['red', 'blue', 'orange', 'green', 'white', 'black'];
+
+// new way
+// const colors = ['red', 'blue', 'orange', 'green'];
+// const myColors = [...colors, 'white', 'black'];
+
+
+
+// console.log(myColors);
+// console.log(myColors[0]);
+// myColors[0] = 'grey';
+// console.log(myColors[0]);
+// console.log(colors[0]); 
+
+
+
+// let a = [1,2];
+// let b = [3,4];
+// let c = [...a, ...b];
+// console.log(c);
+
+
+
+//Note: all concept of spread operatot in Object 
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// ES-7 (2016)
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// 1 array inclucde
+
+// const colors = ['red', 'blue', 'orange', 'green'];
+// console.log(colors.includes('red'))
+
+// ** operator (Exponentional Operator)
+
+// console.log(2**3)
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// ES-8 (2017)
+//////////////////////////////////////////////////////////////////////////////////////////
+// Padding in string
+// let name = "malik".padStart(7);
+// console.log(name);
+// let name1 = "malik".padEnd(7);
+// console.log(name1);
+
+// Object  .Values() and >entries()   {obj to array}
+
+
+// const person = {name:"Fred", age:22};
+// console.log(Object.values(person));
+// console.log(Object.values(person)[0]);
+// console.log(Object.entries(person));
+// console.log(Object.entries(person)[0]);
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// ES-9 (2018)
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// Spread Operator in Object Already done above 
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// ES-10 (2019)
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// flat array concept
+
+
+// const arr = [
+//     [1,2],
+//     [3,4],
+//     [5, [7,8] ]
+// ]
+
+// console.log(arr.flat());
+// console.log(arr.flat(2));
+
+
+// const arr1 = [
+//     [1,2],
+//     [3,4],
+//     [5, [7, [9,10]] ]
+// ]
+
+// console.log(arr1.flat());
+// console.log(arr1.flat(2));
+// console.log(arr1.flat(3)); // or 
+// console.log(arr1.flat(Infinity));  // no need to write number
+
+
+
+
+// Object  .fromValues() and fromentries()   { array to Obj}
+
+
+// const person = {name:"Fred", age:22};
+
+// const x = Object.entries(person)
+
+// console.log(Object.fromEntries(x));
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// ES-11 (2020)
+////////////
+
+// Big Int
+
+ 
+// let noRange = Number.MAX_SAFE_INTEGER;
+// console.log(noRange);
+// console.log(9007199254740991 + 12); // wrong answer because out of range ans expected
+
+// // here we use BigInt freature of ES 2020 using (n)
+// console.log(9007199254740991n + 12n); // this number type is Bigint
+
+
+
+
+
+// NULLISH
+// run in browser
+// const foo = null ?? 'malik';
+// console.log(foo)
+
+
+// ES 2014
+
+// use strict mode (work in browser)
+// "use strict";
+// x = 3.14;
+// console.log(x);
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
