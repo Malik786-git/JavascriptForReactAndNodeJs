@@ -35,13 +35,13 @@
 
   <script>
     //   1
-    //   Bubbing (if you click parent only alert parent, but if you click child so first alert child then parent automatically, because child inside the parent so parent click automatically)
-    //   document.getElementById('parent').addEventListener('click', ()=>{
-    //        alert('Parent call');  
-    //   });
-    //   document.getElementById('child').addEventListener('click', ()=>{
-    //        alert('child call');  
-    //   });
+    //   Bubbling Event(if you click parent only alert parent, but if you click child so first alert child then parent automatically, because child inside the parent so parent click automatically)
+      document.getElementById('parent').addEventListener('click', ()=>{
+           alert('Parent call');  
+      });
+      document.getElementById('child').addEventListener('click', ()=>{
+           alert('child call');  
+      });
     
     
     
@@ -54,23 +54,21 @@
            event.stopPropagation();
       });
 
-    //   3
+    //   3 (when you click child first alert parent then child)
     document.getElementById('parent').addEventListener('click', ()=>{
            alert('Parent call');  
       }, true);
       document.getElementById('child').addEventListener('click', ()=>{
            alert('child call');  
-           event.stopPropagation();
       }, true);
-
-    // 4
+ 
+    //   4 (when you click child first alert child then parent)
     document.getElementById('parent').addEventListener('click', ()=>{
            alert('Parent call');  
-      }, true);
+      }, false);
       document.getElementById('child').addEventListener('click', ()=>{
-           alert('child call');  
-           event.stopPropagation();
-      }, true);
+           alert('child call');     
+      }, false);
 
   </script>
   

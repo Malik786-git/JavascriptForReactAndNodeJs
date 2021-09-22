@@ -130,7 +130,7 @@ const { inflate } = require("zlib");
 // old way
 // console.log(sum());
 // function sum(){
-//     return `Sum = ${(a=11)+(b=15)}`;
+//     return `Sum = ${11+15}`;
 // }
 
 // new way
@@ -149,7 +149,7 @@ const { inflate } = require("zlib");
 
 // Also for one line of return code
 
-// const sum = ()=>{ `Sum = ${(a=11)+(b=15)}`;} //undefine,because not found return
+// const sum = ()=>{ return `Sum = ${(a=11)+(b=15)}`;} //undefine,because not found return
 // const sum = ()=> `Sum = ${(a=11)+(b=15)}`;  //run, Without { }  no need to return
 // console.log(sum());  //run
 
