@@ -172,7 +172,7 @@ const { inflate } = require("zlib");
 // var arr = new Array;  //optional
 // var arr =  ["hamza", "owais", "ashar", "umer", "talha","areeb"];
 
-// var myFriend = ["hamza", "owais", "ashar", "umer", "talha","areeb"];
+// var myFriend = ["hamza", "owais", "ashar", "umer","areeb"];
 // console.log(myFriend[1]); 
 
 // for last element get
@@ -181,7 +181,7 @@ const { inflate } = require("zlib");
 // console.log(myFriend[myFriend.length-1]);
 
 // simple for loop
-// var myFriend = ["hamza", "owais", "ashar", "umer", "talha","areeb"];
+// var myFriend = ["hamza", "owais", "yusra owais", "ashar", "umer","areeb"];
 
 // for (let i = 0; i < myFriend.length; i++) 
 // {
@@ -212,6 +212,11 @@ const { inflate } = require("zlib");
 // calls a function for each element in array
 
 // let myFriend = ["hamza", "owais", "ashar", "umer", "talha","areeb"];
+
+// myFriend.forEach((elem, index, array)=>{
+//     console.log(array);
+// });
+
 
 // myFriend.forEach(function(element, index, array){
 // //    console.log(element); 
@@ -250,7 +255,7 @@ const { inflate } = require("zlib");
 //  search first element se hugi
 
 // console.log(Friend.indexOf('areeb'));
-// console.log(Friend.indexOf('owais',2)); //searching of owais from index 2
+// console.log(Friend.indexOf('owais',1)); //searching of owais from index 2
 // console.log(Friend.indexOf('talha',2)); //searching of talha from index 2
 
 
@@ -264,7 +269,7 @@ const { inflate } = require("zlib");
 // console.log(Friend.includes('owais')); //return true / false
 // console.log(Friend.includes('Owais')); //return true / false caseSencitive
 
-// console.log(Friend.includes('owais',1)); //search from index 1
+// console.log(Friend.includes('owais',2)); //search from index 1
 
 
 /////////////////////////////////////////////
@@ -274,7 +279,8 @@ const { inflate } = require("zlib");
 // const prices = [22,50,9,21,14,45,55];
 // // prices > 50
 
-
+// const x = prices.find(val => val>40);
+// console.log(x);
 // const f = prices.find((currVal)=>{
 //     return currVal > 50;
 // });
@@ -286,7 +292,7 @@ const { inflate } = require("zlib");
 // find Index (we get element index)
 // const prices = [22,50,9,21,14,45,55];
 // prices > 50
-// console.log(prices.findIndex((c) =>c > 150));  // return -1 if not found
+// console.log(prices.findIndex((c) =>c > 50));  // return -1 if not found
 // console.log(prices.findIndex((c) =>c < 50));
 
 /////////////////////////////////////////////
@@ -294,9 +300,9 @@ const { inflate } = require("zlib");
 // return new array after filter any element or condition
 // return empty array if its not found
 // const prices = [22,50,9,21,14,45,55];
-// price <50
+// price <50...
 
-// console.log(prices.filter((ele, index)=> ele<50));
+// console.log(prices.filter((ele)=> ele<50));
 
 /////////////////////////////////////////////
 // 1.  Array.prototype.sort()
@@ -308,11 +314,10 @@ const { inflate } = require("zlib");
 // console.log(prices.sort()); //it work only string
 
 
-
 ///////////////////////////////////////////
 // Methods In Arrays
 ///////////////////////////////////////////
-// CRUD
+// CRUD (create, read, update, delete)
 ///////////////////////////////////////////
 
 // let Friend = ["owais", "ashar", "umer", "talha"];
@@ -320,16 +325,15 @@ const { inflate } = require("zlib");
 
 // Friend.push('hamza');
 // console.log(Friend)
-// // return array length
+// // // return array length
 // const c = Friend.push('shah','zubair','kuch bh');
 // console.log(Friend)
 
 // console.log(c)
 
-
-///////////////////////////////////////////
+//////////////////////////////////////////////////////
 // let Friend = ["owais", "ashar", "umer", "talha"];
-// //unshift // add element starting 
+// // //unshift // add element starting 
 
 // Friend.unshift('hamza');
 // console.log(Friend)
@@ -368,17 +372,18 @@ const { inflate } = require("zlib");
 // console.log(whatReturnShift);
 
 /////////////////////////////////////////////
+// Update 
 // splice //add and remove element
 
 // const month = ["jan", "feb", "mar","april", "jun"]
-// first pass index number, second delete elemt, third what add
-// const newMonth = month.splice(4,0,"May");
-// console.log(month);
-// const newMonthss = month.splice(month.length,0,"Dec");
+// // first pass index number, second delete elemt, third what to be add
+// // const newMonth = month.splice(2,1,"May");
+// // console.log(month);
+// const newMonthss = month.splice(2,2,"Dec");
 // console.log(month);
 
-// // what return
-// console.log(newMonth); // return how many element delete is return
+// // // what return
+// console.log(newMonthss); // return how many element delete is return
 
 //////////////////////////////////////////////
 // Update
@@ -396,11 +401,11 @@ const { inflate } = require("zlib");
 // const month = ["jan", "feb", "mar","april", "jun"]
 // const upM = month.splice(1,Infinity)  //infinity delete all from index 1
 // console.log(month);
-////////////////////////////////////////////////
+/////////////////////////////////////////////////
 ////////////////////////////////////////////////
 
 // MAP() (it is not distrub original array, while forEach() change original array)
-// return new array which you want in form of F/T
+// return new array which you want in form of F/T...
 
 // const array1 = [1,4,9,16,25];
 // // num > 9
@@ -408,8 +413,10 @@ const { inflate } = require("zlib");
 // let newAtt = array1.map((e , i , arr)=>{
 //     return e > 9
 // })
+
 // console.log(newAtt);
 // console.log(array1);
+
 /////////////////////////////////
 // const array2 = [1,4,9,16,25];
 
@@ -425,10 +432,13 @@ const { inflate } = require("zlib");
 
 // let arr = [25, 36, 49, 64, 81];
 
-// let sqRoot = arr.map((e, i, arr)=>{
+// let sqRoot = arr.filter((e, i, arr)=>{
 //     return Math.sqrt(e);
 // });
 
+// let qRoot = arr.map((e, i, arr)=>{
+//     return Math.sqrt(e);
+// });
 // console.log(sqRoot);
 
 // 2, Multiply each element by 2 and return only thosee element which are greater than 10?
@@ -441,7 +451,9 @@ const { inflate } = require("zlib");
 ////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 // Reduce Method
-//////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+
 // flatten an array means to convert the 3d or 2d array into a single dimensional array
 // Also
 // the reduce method execute ta reducer function (that you provide) 
@@ -455,22 +467,22 @@ const { inflate } = require("zlib");
 
 // // i want sum of array
 // let arr = [5,6,2];
-// // accumulator mean what operation here sum is operation
+// // // accumulator mean what operation here sum is operation
 // let sum = arr.reduce((accumulator, e, i, arr) => {
 //     return accumulator+=e;
 // })
 
 // console.log(sum); //sum of array is 13
-////////////////////////////////////
 
+////////////////////////////////////////////////////////////
 
 
 
 // let arr = [5,6,2];
-// // accumulator mean what operation here sum is operation
+// // // accumulator mean what operation here sum is operation
 // let sum = arr.reduce((accumulator, e, i, arr) => {
 //     return accumulator+=e;
-// },150) // add 150 and sum of array, accumulator add array in to 150
+// },10) // add 150 and sum of array, accumulator add array in to 150
 
 
 // console.log(sum); //sum of array is 163
@@ -507,9 +519,11 @@ const { inflate } = require("zlib");
 //     [4,5,6],
 //     [7,8,9,[10,11,12]]
 // ];
+// let flatArray = arr.reduce((acc,e)=> acc.concat(e));
+// console.log(flatArray);
 
 
-
+// indexOf, lastIndexOf, include, find, findIndex, push, pop, unshift, shift, splice, filter, map, reduce...
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -924,10 +938,26 @@ const { inflate } = require("zlib");
 //      age          :  18 ,
 //      getData      : function(){ console.log(bioData.name)}
 //  }
+//  bioData.gender = "male";
+// console.log(bioData);
+// delete bioData.gender;
+// console.log(bioData);
+// bioData.getData();
 
-// console.log(bioData.age);
-// bioData.getData()
 
+// let bioData = {
+//     name         : "malik" ,
+//     age          :  18 ,
+//     gender       : "male"
+// }
+
+
+// var mykeys = Object.keys(bioData)
+// // console.log(mykeys);
+
+// for (const e of mykeys) {
+//     console.log(bioData[e])
+// }
 
 // another way After ES-6
 
@@ -941,7 +971,7 @@ const { inflate } = require("zlib");
 // console.log(bioData.age);
 // bioData.getData()
 
-// Onject inside the Object
+// Object inside the Object
 
 
 // let bioData = {
@@ -1008,18 +1038,21 @@ const { inflate } = require("zlib");
 // bioData.getData() 
 
 
-
 // ES - 6 PART
 
 // Array DESTRUCTURING
 
 // const myData = ["malik", 18, "C++"]
-// let [name, age, subject] = myData;
+let [name, age, subject] = myData;
 
 // console.log(age);
 
+// const student = ["ashar", 20, "js"];
 
+// let [name, age, subject, gender="male"] = student;
 
+// console.log(name, age, subject, gender)
+ 
 
 
 // const myData = ["malik", 18, "C++"]
@@ -1038,8 +1071,8 @@ const { inflate } = require("zlib");
 //     uni : "dawood" 
 // }
 
-// let {name, age, uni, sub="Cpp"} = bioData;
-// console.log(name);
+// let {name1, age2, uni2, sub="Cpp"} = bioData;
+// console.log(name1);
 // console.log(sub);
 
 
@@ -1048,7 +1081,7 @@ const { inflate } = require("zlib");
 
 // we use now use Dynamic Properties
 
-// let myName = "name"
+// let myName = "name";
 
 
 // let bioData = {
@@ -1063,7 +1096,7 @@ const { inflate } = require("zlib");
 
 
 
-// let myName = "name"
+// let myName = "malik"
 // let age = 18
 
 // let bioData = {
@@ -1073,18 +1106,26 @@ const { inflate } = require("zlib");
 
 // console.log(bioData);
 
+// let x = 20;
+// let y = 30;
 
+// const numbers = {
+//     x,
+//     y
+// }
+// console.log(numbers)
 
 
 // let myName = "name"
 // let age = 18
 
-// let bioData = { myName, age }
+// let bioData = {  myName, age  }
 
 // console.log(bioData);
 
 
-
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 // Spread Operator(...)
 
 
@@ -1224,9 +1265,6 @@ const { inflate } = require("zlib");
 
 // // here we use BigInt freature of ES 2020 using (n)
 // console.log(9007199254740991n + 12n); // this number type is Bigint
-
-
-
 
 
 // NULLISH
