@@ -569,7 +569,7 @@ const { inflate } = require("zlib");
 
 
 
-// let uni2 = '10 Universitie\"s'; // no error
+// let uni2 = '10 Universitie"s'; // no error
 // console.log(uni2);
 
 // Find a string in a string
@@ -644,7 +644,6 @@ const { inflate } = require("zlib");
 // Quiz...
 // how to display only 200 character from long paragraph like social media discription page..
 // Solve 
-//  const para =  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis praesentium distinctio consectetur quas harum neque veritatis ut aspernatur explicabo iure a quisquam optio, ipsam amet laboriosam eum, dicta possimus corrupti vel itaque animi, libero fugiat tempore. Sunt modi cum, tenetur itaque quis numquam accusamus placeat! Odit laboriosam nostrum soluta molestiae, delectus consequatur, aliquam ea rerum dicta sequi placeat nesciunt sapiente! Reiciendis fuga doloremque corporis enim. Esse quae harum cumque assumenda debitis neque, libero culpa quo, quod quos vel soluta beatae, excepturi ipsam perspiciatis non aliquid voluptate in? Modi pariatur nisi id ea? Ipsum architecto vitae, neque, dolore rerum id recusandae eius corrupti dicta suscipit numquam officia facere nam explicabo iure saepe eligendi, enim porro sit. Laboriosam ea, veritatis consequatur pariatur, voluptate minima magnam id, explicabo numquam quos ex similique quia rerum quidem porro blanditiis vel eos asperiores exercitationem voluptatibus facere et? Similique dolore dolores nemo, temporibus quod optio? Rem qui velit odit laborum tempore praesentium blanditiis? Eum non odio, porro praesentium sunt ipsum alias incidunt quaerat dolorem id nam harum itaque doloribus, sapiente totam possimus optio deserunt minus, molestias iusto necessitatibus labore? Eligendi facilis aliquid fugit commodi blanditiis labore eius repudiandae consequatur nemo quidem obcaecati pariatur ex rem quas, cum iure porro et saepe nisi eum. Illo recusandae reiciendis illum debitis repellendus minus, ad, cumque facilis provident tenetur architecto reprehenderit sint obcaecati mollitia, suscipit voluptatibus molestias distinctio nulla aspernatur optio officiis ea cupiditate. Repellat natus doloribus ad ea nulla nemo, eum earum voluptate accusantium minima in qui quibusdam at obcaecati facilis eius laudantium inventore expedita! Animi, numquam aperiam iste aspernatur illo quaerat dolor sint dicta assumenda, neque officiis error esse, ab quas? Officiis autem itaque consequatur voluptates doloribus id earum molestiae sint voluptatum, harum iste impedit, illo corporis ratione corrupti officia deserunt minus cumque dicta minima tempora alias accusamus? Aliquam.";
 //  console.log(para.slice(0,200));
 
 
@@ -1043,7 +1042,7 @@ const { inflate } = require("zlib");
 // Array DESTRUCTURING
 
 // const myData = ["malik", 18, "C++"]
-let [name, age, subject] = myData;
+// let [name, age, subject] = myData;
 
 // console.log(age);
 
