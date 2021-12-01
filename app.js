@@ -545,10 +545,12 @@ const { inflate } = require("zlib");
 // from string literals, or as object, using Sting() contructor
 
 // let myName = "Malik Programmer";
-// let myName2 = "Malik Coder";
+// let myName2 = 'Malik Coder';
 
 // let myName3 = new String("Malik Developer"); // not recommended
-
+let x = 786;
+let myName4 = `malik muhammad jahangir ${x}`;
+console.log(myName4);
 // console.log(myName);
 // console.log(myName2);
 // console.log(myName3);
@@ -581,7 +583,7 @@ const { inflate } = require("zlib");
 // const B = "I am the Computer Scientist";
 // console.log(B.indexOf("m",4)); // search m from index 4
 
-// String.prototype.lasrindexOf() // baxkword search
+// String.prototype.lastindexOf() // baxkword search
 
 // const C = "I am the Computer Scientist";
 // console.log(C.lastIndexOf("m")); // search backword and find m of Computer first, so return index of m of Computer
