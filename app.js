@@ -548,9 +548,9 @@ const { inflate } = require("zlib");
 // let myName2 = 'Malik Coder';
 
 // let myName3 = new String("Malik Developer"); // not recommended
-let x = 786;
-let myName4 = `malik muhammad jahangir ${x}`;
-console.log(myName4);
+// let x = 786;
+// let myName4 = `malik muhammad jahangir ${x}`;
+// console.log(myName4);
 // console.log(myName);
 // console.log(myName2);
 // console.log(myName3);
@@ -600,7 +600,7 @@ console.log(myName4);
 // 1
 // slice(start, end) => extracts a part of a string and returns the extracted part in a new string.
 // let str = "Apple, Banana, Mango";
-// let res = str.slice(0,4) // get appl, because me give index from 0 to 4(here 4-1) mean it select only 0 to 3, select before 4 string character
+// let res = str.slice(0,5) // get appl, because me give index from 0 to 4(here 4-1) mean it select only 0 to 3, select before 4 string character
 // console.log(res);
 // let res2 = str.slice(7,-2) // -2 mean travers all string and remove last two string character
 // console.log(res2);
@@ -611,8 +611,8 @@ console.log(myName4);
 // 2
 // substring(start, length) => similar use like slice, but we dont argu negative value (0, -5) etc
 // let str = "Apple, Banana, Mango";
- // let res = str.substring(0, 4) 
-// let res = str.substring(1, -4) // dont work -4 here, only read before index 1 so it return 0 index character
+//  let res = str.substring(0, 4) 
+// let res = str.substring(2, -4) // dont work -4 here, only read before index 1 so it return 0 index character
 
 // console.log(res);
 
@@ -622,6 +622,8 @@ console.log(myName4);
 // 3
 // substr(start, end)
 // let str = "Apple, Banana, Mango";
+
+
 //  let res = str.substr(2, -4)  // it retun " " if we give any negative value
 // console.log(res);
 
@@ -630,6 +632,7 @@ console.log(myName4);
 
 // let res2 = str.substr(-5)  // only one arg, which is negative so it return backwork string, which is main purpuse of this function
 // console.log(res2);
+
 
 
 // -----------------------------------------------------------------------------------------------------
@@ -666,7 +669,7 @@ console.log(myName4);
 // Quiz...
 // find unicode of last character of string
 
-// // solution 1
+// // // solution 1
 // let str = "malik malik jahangir";
 // let lastChar = str.substr(-1);
 // console.log(lastChar.charCodeAt()); 
@@ -684,7 +687,7 @@ console.log(myName4);
 
 // -----------------------------------
 // Useful METHODS
-// upper and lower case
+// // upper and lower case
 // let str = "malik jahangir";
 // console.log(str.toUpperCase());
 // console.log(str.toLowerCase());
@@ -693,13 +696,13 @@ console.log(myName4);
 // let str1 = "malik";
 // let str2 = "jahangir";
 // console.log(str1.concat(str2));
-// console.log(str1.concat("_", str2));
+// console.log(str1.concat("  _", str2));
 // console.log(str2); // not change original
 
 
 // trim Method (remove white space)
 // let str1 = "            malik               ";
-// let str2 = "            malik        jahangir       ";  // only remove before and after string white spaces
+// let str2 = "            malik        jahangir  asdfasdfd       ";  // only remove before and after string white spaces
 
 // console.log(str1.trim());
 // console.log(str2.trim());
@@ -725,10 +728,10 @@ console.log(myName4);
 // Date object contain a Number that represents milliseconds since 1 January 1970 UTC............
 
 // Creating Date Object, We have four ways 
-// 1. new Data()
-// 2. new Data(year, month, day, hours, minutes, seconds, milliseconds)
-// 3. new Data(date string)
-// 4. new Data(milliseconds)
+// 1. new Date()
+// 2. new Date(year, month, day, hours, minutes, seconds, milliseconds)
+// 3. new Date(date string)
+// 4. new Date(milliseconds)
 
 
 // new Date() created with new Date constructor
@@ -752,7 +755,7 @@ console.log(myName4);
 // console.log(d1.toLocaleString());  
 
 
-// at least two agument
+// // at least two agument
 // console.log(new Date(2021)); // return 1/1/1970
 // console.log(new Date(2021,0)); //   return  1/1/2021
 
@@ -812,6 +815,7 @@ console.log(myName4);
 
 
 // Practical Time And Date Methods
+
 // new Date().toLocaleDateString();
 // new Date().toLocaleTimeString();
 // new Date().toLocaleString();
@@ -832,9 +836,10 @@ console.log(myName4);
 // round value get 
 // let number = 10.51;
 // console.log(Math.round(number));
-
+// 
 // power similar to expression write in js like 2**3
 // console.log(Math.pow(2,3));
+// or 
 // console.log(2**3);
 
 // Square root
@@ -877,9 +882,7 @@ console.log(myName4);
 
 // Math.trunc() return the integer part of number
 // console.log(Math.trunc(4.6)); // for positive number it work like math.floor 
-// console.log(Math.trunc(-4.6)); // for negative number it work like math.ceil
-
-
+// console.log(Math.trunc(-4.1)); // for negative number it work like math.ceil
 
 
 
@@ -898,7 +901,7 @@ console.log(myName4);
 //     console.log("Hello World");
 // }, 5000);
 
-//2.  setInterval(fun, millisecond) => Same as setTimeout(), but repeat the execution of the function continuously like digital clocl 
+// 2.  setInterval(fun, millisecond) => Same as setTimeout(), but repeat the execution of the function continuously like digital clocl 
 
 // setInterval(()=>{
 //     console.log("Hello World");
@@ -918,13 +921,25 @@ console.log(myName4);
 //     console.log("Hello World");
 // }, 1000);
 
+
 // setTimeout(() => {
 //     clearInterval(x)
 // }, 6000);
 
+///////////////////////////////////////////
 
+// console.log('hello world');
 
+// setTimeout(()=>{console.log('hello world set time out')}, 6000);
 
+// console.log('hello world');
+//////////////////////////////////////////
+
+// console.log('hello world');
+
+// setInterval(()=>{console.log('hello world set time out')}, 6000);
+
+// console.log('hello world');
 
 
 

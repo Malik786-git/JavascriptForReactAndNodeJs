@@ -8,7 +8,7 @@
 </head>
 <body>
     
-          <div class="main-div">
+          <div class="main-div" id="main">
               <div class="child_1" id="para1">
                   1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, sunt.</p>
               </div>
@@ -19,65 +19,78 @@
                   3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, sunt.</p>
               </div>
           </div>
+              <!-- ///////////////////////////// -->
+         <div id="main2"><p>A</p><p>B</p><p>C</p><p>D</p></div>     
+<script>
+         let main2 = document.getElementById('main2');
+        //  console.log(main.childElementCount)
+         console.log(main2.childNodes[0].nodeValue);
 
+
+</script>
        <input type="text" name="gender">
-
+        <h1 id="heading"></h1>
+        <!-- <h1 id="heading"></h1> -->
 <script>
     
     // Note: all codes run in inspect of console 
     
     // complete html of current page
-    document.documentElement; 
+    // console.log(document.documentElement); 
 
     // complete body
-    document.body
+//  console.log(   document.body);
 
     // complete head 
-    document.head;
+    // console.log( document.head);
 
     // node 
-    document.body.childNodes;
+    // console.log( document.body.childNodes);
 
    // childer 
-   document.body.children;
-   document.body.children.length; // how many child
+//    console.log( document.body.children);
+//    document.body.children.length; // how many child
 
    // check body child available or not
-    document.body.hasChildNodes();   
+//    console.log( document.body.hasChildNodes());   
   
     //   HOW TO FIND CHILD IN DOM
-    document.body.firstElementChild;
+//    console.log(document.body.firstElementChild);
+//  let xs = document.getElementById('main').firstElementChild;  
+// console.log(xs);
 
      // check parent of element
-     document.body.parentNode;
-     document.body.parentElement;
+    // console.log(document.body.parentNode);
+    //  document.body.parentElement;
 
-    // siblings
-    document.head.nextSibling;
-    document.body.previousSibling;
-    document.head.nextElementSibling;
-    document.body.previousElementSibling;
+    // siblings...
+//   console.log(  document.head.nextSibling);
+    // document.body.previousSibling;
+//   console.log(  document.body.previousSibling);
+
+    // console.log( document.head.nextElementSibling);
+    // document.body.previousElementSibling;
 
     
     // selected element form id classes
-    document.getElementById('para1').innerHTML = "welcome";
+    // document.getElementById('para1').innerHTML = "welcome";
     // using reference
-     var x = document.getElementById('para2');
-     x.innerHTML = "welcome back";
+    //  var x = document.getElementById('para2');
+    //  x.innerHTML = "welcome back";
 
-    document.getElementsByClassName('child_3');
+    // console.log(document.getElementsByClassName('child_3'))
 
-    document.getElementsByTagName('div');
+    // document.getElementsByTagName('h1');
 
     // name attribute
-    document.getElementsByName('gender') 
+    // document.getElementsByName('gender') 
    
-    // query selector (select first matching element)
-    document.querySelector('#para1');
-    document.querySelector('.para1');
-    document.querySelector('div');
-    // use to check how many div
-    document.querySelectorAll('div');
+//     // query selector (select first matching element)
+//     document.querySelector('#para1').innerHTML = 'were';
+//     document.querySelector('.para1')
+//     // document.querySelector('div');
+//     // use to check how many div
+//    console.log( document.querySelectorAll('div'));
 
 
 

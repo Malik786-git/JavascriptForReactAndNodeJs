@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #heading1{
+        background: rgb(51, 10, 90);
+        color: white;
+    }
+</style>
+<body>
+    
+    <input id="input" type="text">
+    <button id="btn" onclick="fun1()">click here</button>
+
+    <div id="main" >
+             
+    </div>
+
+    <script>
+        let main = document.getElementById('main');
+        let input = document.getElementById('input');
+        let btn = document.getElementById('btn');
+        function fun1(){
+
+            //html tag through JS
+            let heading = document.createElement('h1');
+            let text = document.createTextNode(input.value);
+            console.log(text);
+            heading.appendChild(text);
+            main.appendChild(heading);
+            heading.setAttribute('id', 'heading1');
+         }
+
+        ////////////////////////////////////////////////
+    
+                     
+       </script>
+</body>
+</html>
