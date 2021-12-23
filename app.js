@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const { promises } = require("dns");
 const { setInterval, clearInterval } = require("timers");
 const { inflate } = require("zlib");
 
@@ -28,8 +29,6 @@ const { inflate } = require("zlib");
 // console.log(myName)
 // myName = "Malik Jahangir Warsi";
 // console.log(myName)    //error
-
-
 
 
 ///////// Let Vs Var ////////////
@@ -1140,13 +1139,13 @@ const { inflate } = require("zlib");
 // console.log(bioData);
 
 
-//////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 // Spread Operator(...)
 
 
 // const colors = ['red', 'blue', 'orange', 'green'];
-// const myColors = colors;  // here copy referece
+// const myColors = colors  // here copy referece
 
 
 
@@ -1158,7 +1157,8 @@ const { inflate } = require("zlib");
 
 
 
-// old way
+// old way.....
+
 // const colors = ['red', 'blue', 'orange', 'green'];
 // const myColors = ['red', 'blue', 'orange', 'green', 'white', 'black'];
 
@@ -1194,7 +1194,7 @@ const { inflate } = require("zlib");
 // const colors = ['red', 'blue', 'orange', 'green'];
 // console.log(colors.includes('red'))
 
-// ** operator (Exponentional Operator)
+// // ** operator (Exponentional Operator)
 
 // console.log(2**3)
 
@@ -1213,12 +1213,15 @@ const { inflate } = require("zlib");
 
 
 // const person = {name:"Fred", age:22};
+
 // console.log(Object.values(person));
+
 // console.log(Object.values(person)[0]);
+
 // console.log(Object.entries(person));
+
 // console.log(Object.entries(person)[0]);
-
-
+// // 
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -1237,7 +1240,7 @@ const { inflate } = require("zlib");
 // const arr = [
 //     [1,2],
 //     [3,4],
-//     [5, [7,8] ]
+//     [5, 7, [9, 10] ]
 // ]
 
 // console.log(arr.flat());
@@ -1250,9 +1253,9 @@ const { inflate } = require("zlib");
 //     [5, [7, [9,10]] ]
 // ]
 
-// console.log(arr1.flat());
-// console.log(arr1.flat(2));
-// console.log(arr1.flat(3)); // or 
+// // console.log(arr1.flat());
+// // console.log(arr1.flat(2));
+// // console.log(arr1.flat(3)); // or 
 // console.log(arr1.flat(Infinity));  // no need to write number
 
 
@@ -1264,8 +1267,9 @@ const { inflate } = require("zlib");
 // const person = {name:"Fred", age:22};
 
 // const x = Object.entries(person)
-
-// console.log(Object.fromEntries(x));
+// console.log(x);
+// let y = ['name', "fred"];
+// console.log(Object.fromEntries(y));
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -1273,12 +1277,11 @@ const { inflate } = require("zlib");
 ////////////
 
 // Big Int
-
  
 // let noRange = Number.MAX_SAFE_INTEGER;
 // console.log(noRange);
 // console.log(9007199254740991 + 12); // wrong answer because out of range ans expected
-
+                           
 // // here we use BigInt freature of ES 2020 using (n)
 // console.log(9007199254740991n + 12n); // this number type is Bigint
 
@@ -1296,8 +1299,257 @@ const { inflate } = require("zlib");
 // x = 3.14;
 // console.log(x);
 
+//////////////////////////
+// promises..
+// The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+// A promise represents the result of the asynchronous function. Promises can be used to avoid chaining callbacks. In JavaScript,
+// A Promise is in one of these states:
+// pending: initial state, neither fulfilled nor rejected.
+// fulfilled: meaning that the operation completed successfully.
+// rejected: meaning that the operation failed.
 
 
+
+
+// var promise1 = new Promise(function(resolve, reject) {
+//     isDbOperationCompleted = false;
+//     if (isDbOperationCompleted) {
+//         resolve('Completed');
+//     } else {
+//         reject('Not completed');
+//     }
+// });
+// promise1.then(function(result) {
+//     console.log(result); //Output : Completed
+// }).catch(function(error) {
+//     console.log(error); //if isDbOperationCompleted=FALSE                                                  
+//     //Output : Not Completed
+// })
+////////////////////////////////////////////////////////////////////////////
+
+// var pro = new Promise((resolve, reject)=>{
+//       isDataFetch = true;
+
+//       if (isDataFetch) {
+//           resolve("data get")
+//       }else{
+//           reject("network error!")
+//       }
+// });
+
+// pro.then((result)=>{
+//     console.log(result);
+// }).catch((error)=>{
+//     console.log(error);
+// })
+
+
+////////////////////////////////////////////////////////////////////////////
+// fetch api (https://www.javascripttutorial.net/javascript-fetch-api/)
+// let response = fetch(url);
+// async function fetchText() {
+//     let response = await fetch('/my.txt');
+
+//     console.log(response.status); // 200
+//     console.log(response.statusText); // OK
+
+//     if (response.status === 200) {
+//         let data = await response.text();
+//         // handle data
+//     }
+// }
+
+// fetchText();
+////////////////////////////////////////////////////////////////////////////////
+// asyn await
+
+// async function getUserDetail() {
+//     try {
+//         let users = await getUsers();
+//         return users[0].name;
+//     } catch (err) {
+//         return {
+//             name: 'default user'
+//         };
+//     }
+// }
+
+
+/////////////////////////////////////////////////////////////////////////////
+// local storage set get remove
+// Store
+// localStorage.setItem("name", "owais");
+// // Retrieve
+// let ele = document.querySelector(".result") 
+// ele.innerText = localStorage.getItem("lastname");
+
+// localStorage.removeItem('myCat');
+
+// // Clear all items
+// localStorage.clear();
+// ////////////////////////////////////////////////
+// // session storage
+// // Session Storage
+// // Save data to sessionStorage
+// sessionStorage.setItem('key', 'value');
+
+// // Get saved data from sessionStorage
+// let data = sessionStorage.getItem('key');
+
+// // Remove saved data from sessionStorage
+// sessionStorage.removeItem('key');
+
+// // Remove all saved data from sessionStorage
+// sessionStorage.clear();
+
+
+// let field = document.getElementById("field");
+// if (sessionStorage.getItem("autosave")) {
+//   field.value = sessionStorage.getItem("autosave");
+// }
+// field.addEventListener("change", function() {
+//  sessionStorage.setItem("autosave", field.value);
+// })
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+// constructor fun
+
+
+// The constructor property returns a reference to the Object constructor function that created the instance object. Note that the value of this property is a reference to the function itself, not a string containing the function's name.
+// All objects (with the exception of objects created with Object.create(null)) will have a constructor property. Objects created without the explicit use of a constructor function (such as object- and array-literals) will have a constructor property that points to the Fundamental Object constructor type for that object.
+
+// let o = {}
+// o.constructor === Object // true
+
+// let o = new Object
+// o.constructor === Object // true
+
+// let a = []
+// a.constructor === Array // true
+
+// let a = new Array
+// a.constructor === Array // true
+
+// let n = new Number(3)
+// n.constructor === Number // true
+
+// function Students(n, ag, add){
+//    this.name = n
+//    this.age = ag
+//    this.address = add
+//    this.func = function(){
+//        console.log("runnin function", this.name)
+//    }
+// }
+
+
+// var rizwan = new Students("rizwan", 20, "address.....")
+// console.log(rizwan.func())
+// var ameen = new Students("ameen", 20, "address.....")
+// console.log(ameen.func())
+// var hamza = new Students("hamza", 19, "address.....")
+// console.log(hamza.func())
+
+//    this.age = age
+//    this.address = address
+//    this.func = function(){
+//        return `${this.name} ${this.age} dummy text`
+//    }
+// }
+
+// let hamza = new Students("Hamza", 20, 'karachi...')
+// console.log(hamza.func())
+// console.log(hamza)
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////
+// generators function (https://javascript.info/generators)
+
+// function* generateSequence() {
+//     yield 1;
+//     yield 2;
+//     return 3;
+//   }
+  
+//   // "generator function" creates "generator object"
+//   let generator = generateSequence();
+
+
+// let value1 = generator.next();
+// console.log(value1);
+
+// let value2 = generator.next();
+// console.log(value2);
+
+
+// let value3 = generator.next();
+// console.log(value3);
+
+////////////////////////////////////////
+// example
+// function* generateSequence() {
+//     yield 100;
+//     yield 200;
+//     return 300;
+//   }
+  
+//   // "generator function" creates "generator object"
+//   let generator = generateSequence();
+
+//    let value1 = generator.next();
+//    console.log(value1);
+//////////////////////////////////////////
+// function* generateSequence() {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+//   }
+  
+//   let generator = generateSequence();
+  
+//   for(let value of generator) {
+//     console.log(value); // 1, then 2
+//   }
+///////////////////////////////////////////
+// function* generateSequence() {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+//   }
+  
+//   let sequence = [0, ...generateSequence()];
+  
+//   console.log(sequence); // 0, 1, 2, 3
+/////////////////////////////////////////////////////////////////////////////////////
+
+// let mySet = new Set()
+// mySet.add(1)           // Set [ 1 ]
+// mySet.add(5)           // Set [ 1, 5 ]
+// mySet.add(5)           // Set [ 1, 5 ]
+// mySet.add('some text') // Set [ 1, 5, 'some text' ]
+// let o = {a: 1, b: 2}
+// mySet.add(o)
+// mySet.add({a: 1, b: 2})   // o is referencing a different object, so this is okay
+// mySet.has(1)              // true
+// mySet.has(3)              // false, since 3 has not been added to the set
+// mySet.has(5)              // true
+// mySet.has(Math.sqrt(25))  // true
+// mySet.has('Some Text'.toLowerCase()) // true
+// mySet.has(o)       // true
+// mySet.size         // 5
+// mySet.delete(5)    // removes 5 from the set
+// mySet.has(5)       // false, 5 has been removed
+// mySet.size         // 4, since we just removed one value
+// console.log(mySet)
+// // logs Set(4) [ 1, "some text", {…}, {…} ] in Firefox
+// // logs Set(4) { 1, "some text", {…}, {…} } in Chrome
 
 
 

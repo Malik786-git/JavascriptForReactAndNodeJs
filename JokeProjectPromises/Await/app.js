@@ -33,26 +33,26 @@
 // ------------------------------------------------------------
 // THrow Async and Await............
 
-const generateJokes = async()=> {
+// const generateJokes = async()=> {
     
-    try{
+//     try{
 
         
-        const setHeader = {
-            headers:{
-                Accept: "application/json"
-            }
-        }
+//         const setHeader = {
+//             headers:{
+//                 Accept: "application/json"
+//             }
+//         }
         
         
-        const res = await fetch('https://icanhazdadjoke.com/', setHeader)
-        const data = await res.json();
-        jokes.innerHTML = data.joke;
+//         const res = await fetch('https://icanhazdadjoke.com/', setHeader)
+//         const data = await res.json();
+//         jokes.innerHTML = data.joke;
         
-    }catch(err){
-        console.log(err)
-    }
-}
+//     }catch(err){
+//         console.log(err)
+//     }
+// }
 
 
 
