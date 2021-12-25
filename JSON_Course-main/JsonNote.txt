@@ -1,0 +1,62 @@
+Json stand for Javascript Object Notation
+Json is a format for storing and transporting data
+Json in often used when data is sent from a server to a web page.
+Json is lightweight data interchange format 
+Json is language independent 
+Json is "self-describing" and easy to understand.
+Help to share data from one to another programming languages..
+
+=======================================================
+Json DataType...
+
+a string
+a number
+an object (Json Object)
+an array
+a boolean
+null
+
+===============================================
+Json not support
+a fuction
+a date
+umdefine
+
+================================================
+Data is in name/value parins
+Data seperated by commas
+Json Object are surrounded by curly braces {}
+Curly braces hold object
+Square bracket hold arrays
+
+Example...
+its syntax like array of objects
+1. 
+[
+  {
+        "name": "malik muhammad Jahangir",
+         "age": 22,
+         "height": 5.10
+   },
+   {
+        "name": "ashar ahmed",
+         "age": 21,
+         "height": 6
+   }
+]
+
+Another Example
+2. 
+{
+  students:[
+               {
+                   "name": "malik muhammad Jahangir",
+                   "age": 22,
+                   "height": 5.10
+                }
+           ]
+}
+
+
+===============================================
+

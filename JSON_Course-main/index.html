@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+</body>
+<script>
+    // note that: Json syntax valid in Js
+//     let students = [
+//     {
+//         "name":"malik",
+//         "age":22,
+//         "height": 170
+//     },
+//     {
+//         "name":"ashar",
+//         "age":21,
+//         "height": 180
+//     }
+// ]
+// console.log(students)
+
+// //////////////////////////////////
+// let students = `[
+//     {
+//         "name":"malik",
+//         "age":22,
+//         "height": 170
+//     },
+//     {
+//         "name":"ashar",
+//         "age":21,
+//         "height": 180
+//     }
+// ]`;
+// console.log(students)
+
+// console.log(JSON.parse(students));
+// console.log(JSON.parse(students)[1].name);
+/////////////////////////////////////////////
+
+//    var jsonObj = {
+//         "name":"ashar",
+//         "age":21,
+//         "height": 180
+//    }
+// //   document.write(jsonObj.name)
+//    for (key in jsonObj) {
+//        document.write(jsonObj[key] + "<br>")
+//    }
+////////////////////////////////////////////////
+
+// var jsonObj1 = {
+//   students:[
+//                {
+//                    "name": "malik",
+//                    "age": 22,
+//                    "height": 5.10
+//                 },
+//                {
+//                    "name": "Jahangir",
+//                    "age": 21,
+//                    "height": 6
+//                 }
+//            ]
+// };
+
+// console.log(jsonObj1.students[1].height);
+
+// for( i in jsonObj1.students)
+// {
+//     //  console.log(i)
+//      for( j in jsonObj1.students[i])
+//      {
+//            console.log(jsonObj1.students[i][j])
+//       }
+// }
+/////////////////////////////////////////////////////
+
+
+// var sendData =  {
+//                    name: "Jahangir",
+//                    age: 21,
+//                    height: 6
+//                 }
+        
+// var changeData = JSON.stringify(sendData); // convert simple obj into json format
+// console.log(changeData);
+// window.location = "send.php?values="+changeData;
+
+////////////////////////////////////////////////////////////////
+// var sendData =  {
+//                    name: "Jahangir",
+//                    age: 21,
+//                    height: 6
+//                 }
+        
+// var changeData = JSON.stringify(sendData); // convert simple obj into json format
+// var jsObj = JSON.parse(changeData);
+// console.log(jsObj.name);
+//////////////////////////////////////////
+// with index.json fetch
+var xhttp = new XMLHttpRequest();
+// Here 
+// 1. 1 for server connection established
+// 2. 2 for request received
+// 3. 3 for processing request
+// 4. 4 for request finished and response is ready
+xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        // action to be perform when the document is read;
+             console.log(xhttp.responseText);
+             var response = JSON.parse(xhttp.responseText);
+             console.log(response.employee);
+             //////////////////////////////
+             var employee = response.employee;
+
+             var showData = "";
+             for (let i = 0; i < employee.length; i++) {
+                 showData += employee[i].name + "<br>";
+             }
+             document.write(showData);
+    }
+}
+
+xhttp.open("GET", "index.json", true);
+xhttp.send();
+</script>
+<script src="app.js"></script>
+</html>
