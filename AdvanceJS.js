@@ -23,7 +23,17 @@ const { setTimeout } = require("timers");
 
 // // calculator(5,4,sub)// calculator higher order fun and add , mul, sub is callback fun
 // console.log(calculator(5,4,sub));   // inderctly call add(5,2)
+// ==========================================
+// const sub = (a,b)=>{
+//     return Math.abs(a-b);
+// }
 
+// const mul = (a,b)=>{
+//     return a*b;
+// }
+
+// const calculator = (n1, n2, operation) => operation(n1, n2)
+// console.log(calculator(3,4,mul));
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,7 +50,7 @@ const { setTimeout } = require("timers");
 
 // output during creation phase
 
-// var myName = null ;
+// var myName;
 // console.log(myName);
 // myName = 'jahangir';
 
@@ -130,17 +140,17 @@ const { setTimeout } = require("timers");
 // a closure give you access to an outer function scope from an inner fuction
 
 
-// const outerFun = (a)=>{
-//     let b = 5;
-//     const innerFun = ()=>{
-//         let sum = a+b;
-//         console.log(sum)
-//     }
-//     return innerFun;
-// }
-// let checkClouser = outerFun(5)
-// console.log(checkClouser)
-// checkClouser() 
+const outerFun = (a)=>{
+    let b = 5;
+    const innerFun = ()=>{
+        let sum = a+b;
+        console.log(sum)
+    }
+    return innerFun;
+}
+let checkClouser = outerFun(5)
+console.log(checkClouser)
+checkClouser() 
 
 // -----------------------------
 
@@ -306,6 +316,232 @@ const { setTimeout } = require("timers");
 //   first();
 // //   second();
   
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//                      Object Oriented Programming in JS
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+// ///////////////// class blue print  ////////////////////////
+
+// class Temp {
+
+//     constructor(name, age){
+//       this.name = name;
+//       this.age = age;
+//     }
+//     // instance method
+//     data(){
+//         console.log('hello world this is data', this.name, this.age);
+//     } 
+//     // static method
+//     static staticData(){
+//         console.log('hello world this is data', this.name, this.age);
+//     }
+// }
+
+
+/// obj of class Temp. obj is instance of Temp class
+
+// let obj = new Temp('malik',22);
+// obj.data();
+// Temp.staticData()
+
+// let obj2 = new Temp(22);
+// obj2.data();
+
+// let obj3 = new Temp('jahangir');
+// obj3.data();
+
+//////////////// Encapsulation //////////////////////////////
+// There are two ways of encapsulation in Javascript:
+
+// Making data members private using var keyword.
+// Set the data using setter methods and get that data using getter methods.
+// We can manage read and write access of object’s properties by using encapsulation
+
+// class Car {
+//     constructor(){
+//         var model;
+//         var name;
+//     }
+
+//     setDetail(m, n){
+    //        this.model = m;
+//        this.name = n
+//     }
+
+//     getDetail(){
+//         return {
+//             model: this.model,
+//             name: this.name
+//         }
+//     }
+// }
+
+// let mycar = new Car();
+// mycar.setDetail(1999, 'civic');
+// console.log(mycar.model);
+// let {name, model} = mycar.getDetail();
+
+// console.log(name, model);
+
+
+
+
+///////////////////// Inheritance //////////////////////
+
+// class General extends Temp{
+//     constructor(name, age, game){
+//     super(name, age);   
+//     this.game = game;
+//  }
+//  Game(){
+//     console.log(this.game + "playing");
+//  }
+// }
+
+
+// let gen = new General('ashar', 12, 'hockey');
+// gen.data();
+// gen.Game();
+
+
+
+
+///////////// prototype /////////////////////////
+
+// this is constructor function.
+
+// let EmpDetails = function (name, age, ) {
+
+
+//     this.name = name;
+//     this.age = age;
+//     this.getName = function (){
+//         return this.name;
+//     }
+//     this.getAge = function (){
+//         return this.age;
+//     }
+// };
+
+// let emp1 = new EmpDetails('malik', 25);
+// let emp2 = new EmpDetails('owais', 25);
+
+// console.log(emp1.getName(), emp2.getName());
+
+
+// //  by useing prototype
+
+// let EmpDetails = function (name, age, ) {
+
+    
+//     this.name = name;
+//     this.age = age;
+  
+// };
+
+// EmpDetails.prototype.getName = function (){
+//     return this.name;
+// }
+// EmpDetails.prototype.getAge = function (){
+//     return this.age;
+// }
+// let emp1 = new EmpDetails('malik', 25);
+// let emp2 = new EmpDetails('owais', 25);
+
+// console.log(emp1.getName(), emp2.getName());
+
+
+/////////// Polymorphism //////////////////////////
+// poly = many
+// Morph = forms
+// Polymorphism = many form.
+
+// class Animal {
+//     constructor(name){
+//         this.name =  name;
+//     }
+
+//     eats(){
+//         console.log(this.name + ' eats food');
+//     }
+// }
+
+// let animal = new Animal('Dog');
+// animal.eats();
+
+// class Alligator extends Animal{
+//     constructor(name,size){
+//        super(name);
+//        super.eats();
+//     this.size = size;
+//     }
+//     eats(){
+//         console.log(this.name + ' eats fishes and the size is ' + this.size );
+//     }
+// }
+
+
+
+// let murphy = new Alligator('murphy', 22);
+// murphy.eats() // child class fun overreturn the parent class eat func... 
+
+
+
+
+///////////// Abstraction ////////////////////////////////////////
+
+/*
+An abstraction is a way of hiding the implementation details and showing only functionality to the users.
+*/
+
+// here annual salary function calculation is hide from the user but they able to access annual month.
+// function Employee(name, age, sal) {
+//     this.name = name;
+//     this.age = age;
+//     this.salary = sal;
+//     this.annualMonth = 12
+
+//     this.getDetail = function () {
+//         console.log('Name: '+ this.name + ' Age: ' + this.age);
+//     }
+//     this.annualSalary = function () {
+//         let annualSalary = this.salary * this.annualMonth;
+//         console.log('Annual Package = ' + annualSalary);
+//     }
+// }
+
+// let emp1 = new Employee('Malik', 23, 200000);
+// emp1.getDetail();
+// emp1.annualMonth = 10;
+// emp1.annualSalary();
+
+
+// now here user cannot access annual month. this is perfect abstraction. user only see the result of annual Salary..
+
+// function Employee(name, age, salary) {
+//     this.name = name;
+//     this.age = age;
+//     this.salary = salary;
+//     let annualMonth = 12
+
+   
+//     let annualSalary = function () {
+
+//         let annualSalary = salary * annualMonth;
+//         console.log('Annual Package = ' + annualSalary);
+        
+//     }
+//     this.getDetail = function () {
+//         console.log('Name: '+ this.name + ' Age: ' + this.age);
+//         annualSalary();
+//     }
+// }
+
+// let emp1 = new Employee('Malik', 23, 200000);
+// emp1.getDetail();
 
 
 
@@ -313,3 +549,7 @@ const { setTimeout } = require("timers");
 
 
 
+
+
+
+// for more detail: https://www.youtube.com/watch?v=D2OjHCUIHNc&list=PLhW3qG5bs-L9MspCEDoTa4TuGJ3K9k9F_&index=21
